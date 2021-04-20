@@ -1,0 +1,20 @@
+<%= form_for(@task) do |task| %>
+    
+    <%= render 'layouts/error' %>
+    <p class="form-group">
+        <%= task.label :Nome_tarefa %></br>
+        <%= task.text_field :name, class:"form-control"  %>
+    <p class="form-group">
+    <p class="form-group">
+        <%= task.label :Descrição_tarefa %></br>
+        <%= task.text_area :description, class:"form-control"  %>
+    <p class="form-group">
+    <p class="form-group">
+        <%= task.label :Data_de_entrega %></br>
+        <%= task.date_field :date, class:"form-control" %>
+    <p class="form-group">
+    <p>
+     <%= task.submit class:'btn btn-primary'%>
+     <%= link_to 'Cancelar', tasks_path, class:'btn btn-default' %>
+    </p>
+    <% end %>

@@ -1,0 +1,30 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header"> <%= pluralize(@tasks.size,'Tarefa','Tarefas') %> 
+            <small class="nova_tarefa" ><%= link_to "Nova tarefa", new_task_path %></small>
+            </h1>
+        </div>
+    </div>
+
+    <% @tasks.each do |task| %>
+        <div class="row">
+            <div class="col-md-7">
+                <h3><%= link_to task.name, task %></h3>
+                <h2> Descrição da tarefa </h2>
+                <p> 
+                    <%= task.description %>
+                </p>
+                <h2> Data de entrega </h2>
+                <p> 
+                    <%= task.date %>
+                </p>
+                
+            </div>
+            
+        </div>
+    <% end %>
+</div>
+
